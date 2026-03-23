@@ -1,4 +1,4 @@
-// Elements
+
 const totalEl = document.getElementById('totalCount');
 const interviewEl = document.getElementById('interviewCount');
 const rejectedEl = document.getElementById('rejectedCount');
@@ -7,7 +7,7 @@ const emptyState = document.getElementById("emptyState");
 
 let currentTab = "all";
 
-// Tab switch
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener("click", () => {
         currentTab = btn.getAttribute("data-tab");
@@ -15,18 +15,18 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     });
 });
 
-// Set Interview / Rejected status
+// Interview / Rejected status
 function setStatus(id, status) {
     const job = document.getElementById("job-" + id);
     const badge = job.querySelector(".status-badge");
     const interviewBtn = job.querySelector(".btn-interview");
     const rejectedBtn = job.querySelector(".btn-rejected");
 
-    // Reset buttons
+    // Reset btns
     interviewBtn.className = "btn-interview px-3 py-1 border rounded transition-all duration-200";
     rejectedBtn.className = "btn-rejected px-3 py-1 border rounded transition-all duration-200";
 
-    // Toggle off if same status clicked
+    // Toggle
     if (job.getAttribute("status") === status) {
         job.setAttribute("status", "none");
         badge.textContent = "";
@@ -55,7 +55,7 @@ function deleteJob(id) {
     updateJobs();
 }
 
-// Update counts, visibility, tabs
+//  count
 function updateJobs() {
     const jobs = document.querySelectorAll(".job-card");
     let interview = 0, rejected = 0, showing = 0;
@@ -86,7 +86,7 @@ function updateJobs() {
         btn.className = "tab-btn px-3 py-1 border rounded transition-all duration-200" + (active ? " bg-[#002c5c] text-white border-[#002c5c]" : "");
     });
 
-    // Counts
+    // Count
     totalEl.innerText = jobs.length;
     interviewEl.innerText = interview;
     rejectedEl.innerText = rejected;

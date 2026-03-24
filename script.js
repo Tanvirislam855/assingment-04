@@ -73,7 +73,7 @@ function updateJobs() {
     // Empty state
     if (showing === 0) {
         emptyState.classList.remove("hidden");
-        document.getElementById("emptyIcon").innerHTML = '<img src="jobs.png" class="mx-auto w-24">';
+        document.getElementById("emptyIcon").innerHTML = '<img src="jobs.png" class="mx-auto w-25">';
         document.getElementById("emptyTitle").textContent = currentTab === "interview" ? "No Interview Jobs Available" : currentTab === "rejected" ? "No Rejected Jobs Available" : "No jobs available";
         document.getElementById("emptySub").textContent = currentTab === "interview" ? "Mark jobs as Interview to see them here." : currentTab === "rejected" ? "Jobs you reject will appear here." : "Check back soon for new job opportunities";
     } else {
